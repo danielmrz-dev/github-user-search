@@ -1,0 +1,30 @@
+@use "../../../scss/variables" as v;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.938rem 1.5rem;
+    &__title {
+        font-size: 1.625rem;
+        line-height: auto;
+    }
+    &__color-mode {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border: none;
+        background-color: transparent;
+        &-text {
+            font-size: 0.813rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: bold;
+            color: v.$Greyish-Blue;
+        }
+        &-icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

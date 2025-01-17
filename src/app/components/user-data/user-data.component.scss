@@ -1,0 +1,17 @@
+@use "../../../scss/variables" as v;
+
+.user-info {
+    background-color: v.$White;
+    margin: 1rem 1.5rem;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    &__profile {
+        display: flex;
+        align-items: center;
+        gap: 1.188rem;
+        &-picture {
+            width: 70px;
+        }
+    }
+
+}
