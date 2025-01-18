@@ -16,9 +16,9 @@
         border: none;
         background-color: transparent;
         &-text {
-            font-size: 0.813rem;
+            font-size: .813rem;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
+            letter-spacing: 2.5008px;
             font-weight: bold;
             color: v.$Greyish-Blue;
         }
@@ -26,5 +26,22 @@
             width: 20px;
             height: 20px;
         }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        max-width: 573px;
+        margin: auto;
+        padding-inline: 0;
+        padding-top: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        min-width: 730px;
+        max-width: 730px;
+        padding-bottom: 2.25rem;
     }
 }

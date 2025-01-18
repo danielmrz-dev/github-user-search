@@ -3,7 +3,7 @@
 .search-bar {
     position: relative;
     padding: 0 1.5rem;
-    z-index: -1;
+    z-index: 0;
     &__icon {
         position: absolute;
         top: 20px;
@@ -36,5 +36,39 @@
         font-weight: bold;
         padding: 0.781rem;
         border-radius: 10px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .search-bar {
+        max-width: 573px;
+        margin: auto;
+        padding-inline: 0;
+        &__icon {
+            top: 23px;
+            left: 32px;
+            width: 24px;
+            height: 24px;
+        }
+        &__input {
+            height: 69px;
+            padding-left: 5rem;
+            font-size: 1.125rem;
+            &::placeholder {
+                font-size: 1.125rem;
+            }
+        }
+        &__button {
+            top: 9.5px;
+            right: 10px;
+            font-size: 1rem;
+            padding: .781rem 1.438rem .844rem 1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .search-bar {
+        max-width: 730px;
     }
 }

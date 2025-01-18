@@ -5,8 +5,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: v.$Space-Mono;
+    list-style-type: none;
 }
 
 body {
     background-color: v.$Off-White;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
