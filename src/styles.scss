@@ -10,6 +10,11 @@
 
 body {
     background-color: v.$Off-White;
+    transition: background-color .3s ease;
+}
+
+.darkMode-bg {
+    background-color: v.$Very-Dark-Blue;
 }
 
 @media screen and (min-width: 768px) {

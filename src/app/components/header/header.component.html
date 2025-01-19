@@ -1,7 +1,11 @@
 <header class="header">
-    <h1 class="header__title">devfinder</h1>
-    <button class="header__color-mode">
-        <span class="header__color-mode-text">Dark</span>
-        <img class="header__color-mode-icon" src="icon-moon.svg" alt="">
+    <h1 class="header__title" [class.darkMode]="!isLightMode">devfinder</h1>
+    <button class="header__color-mode" (click)="switchColorMode()">
+        <span 
+            class="header__color-mode-text" 
+            [class.darkMode]="!isLightMode">
+                {{ isLightMode ? "Dark" : "Light" }}
+        </span>
+        <img class="header__color-mode-icon" [src]="isLightMode ? 'icon-moon.svg' : 'icon-sun.svg'" alt="">
     </button>
 </header>

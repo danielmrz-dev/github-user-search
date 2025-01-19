@@ -8,6 +8,7 @@
     &__title {
         font-size: 1.625rem;
         line-height: auto;
+        transition: color .3s ease;
     }
     &__color-mode {
         display: flex;
@@ -15,18 +16,26 @@
         gap: 1rem;
         border: none;
         background-color: transparent;
+        cursor: pointer;
         &-text {
             font-size: .813rem;
             text-transform: uppercase;
             letter-spacing: 2.5008px;
             font-weight: bold;
             color: v.$Greyish-Blue;
+            transition: color .3s ease;
         }
         &-icon {
             width: 20px;
             height: 20px;
+            transition: all .3s ease;
         }
     }
+}
+
+.darkMode {
+    color: v.$White;
+    background-color: transparent;
 }
 
 @media screen and (min-width: 768px) {

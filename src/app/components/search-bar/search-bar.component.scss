@@ -20,9 +20,11 @@
         border: none;
         padding-left: 2.813rem;
         box-shadow: 0 16px 30px #465fbb30;
+        transition:  background-color .3s ease, color .3s ease;
         &::placeholder {
             font-size: .813rem;
             line-height: 25px;
+            transition: color .3s ease;
         }
     }
     &__button {
@@ -36,6 +38,14 @@
         font-weight: bold;
         padding: 0.781rem;
         border-radius: 10px;
+    }
+}
+
+.darkMode {
+    background-color: v.$Dark-Blue;
+    color: v.$White;
+    &::placeholder {
+        color: v.$White;
     }
 }
 
