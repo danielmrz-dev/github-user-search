@@ -39,6 +39,15 @@
         padding: 0.781rem;
         border-radius: 10px;
     }
+    &__error-msg {
+        color: v.$Red;
+        font-size: 12px;
+        font-weight: bold;
+        position: absolute;
+        right: 120px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 .darkMode {
@@ -73,6 +82,10 @@
             right: 10px;
             font-size: 1rem;
             padding: .781rem 1.438rem .844rem 1.5rem;
+        }
+        &__error-msg {
+            font-size: 15px;
+            right: 130px;
         }
     }
 }

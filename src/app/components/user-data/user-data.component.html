@@ -1,15 +1,15 @@
 <section class="user-info" [class.darkMode]="!isLightMode">
     <div class="user-info__profile">
-        <img src="octocat.png" alt="" class="user-info__profile-picture">
+        <img [src]="user ? user.avatar_url : 'octocat.png' " alt="" class="user-info__profile-picture">
         <div class="user-info__profile-info">
-            <h2 class="user-info__profile-name">The Octocat</h2>
-            <span class="user-info__profile-login">&#64;octocat</span>
-            <p class="user-info__profile-createdAt" [class.darkModeText]="!isLightMode">Joined 25 Jan 2011</p>
+            <h2 class="user-info__profile-name">{{ user ? user.name : "The Octocat" }}</h2>
+            <span class="user-info__profile-login">&#64;{{ user ? user.login : 'octocat' }}</span>
+            <p class="user-info__profile-createdAt" [class.darkModeText]="!isLightMode">Joined {{ user ? user.created_at : '25 Jan 2011' }}</p>
         </div>
     </div>
     
     <p class="user-info__bio" [class.darkModeText]="!isLightMode">
-        This profile has no bio
+        {{ user ? user.bio : 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.' }}
     </p>
 
     <div class="user-info__stats" [class.darkMode-stats]="!isLightMode">
@@ -20,7 +20,7 @@
             </p>
             <p 
                 class="user-info__stats-item-number" 
-                [class.darkModeText]="!isLightMode" >8
+                [class.darkModeText]="!isLightMode" >{{ user ? user.public_repos : '8' }}
             </p>
         </div>
         <div class="user-info__stats-item">
@@ -30,7 +30,7 @@
             </p>
             <p 
                 class="user-info__stats-item-number" 
-                [class.darkModeText]="!isLightMode" >3938
+                [class.darkModeText]="!isLightMode" >{{ user ? user.followers : '3938' }}
             </p>
         </div>
         <div class="user-info__stats-item">
@@ -40,7 +40,7 @@
             </p>
             <p 
                 class="user-info__stats-item-number" 
-                [class.darkModeText]="!isLightMode" >9
+                [class.darkModeText]="!isLightMode" >{{ user ? user.following : '9' }}
             </p>
         </div>
     </div>
@@ -49,34 +49,50 @@
         <a 
             class="user-info__contact-info-item" 
             [class.darkModeText]="!isLightMode"
-
+            [class.user-info__contact-info-item--not-available]="user && (user.location === '' || user.location === null)"
         >
             <img [src]="isLightMode ? 'icon-location.svg' : 'icon-location-white.svg'" alt="">
-            San Francisco
+            <p>
+                <span *ngIf="!user">San Francisco</span>
+                <span *ngIf="user && user.location"> {{ user.location }} </span>
+                <span *ngIf="user && (user.location === '' || user.location === null) "> Not Available </span>
+            </p>
         </a>
-        <a 
+        <a  [href]="user && user.blog" rel="noreferrer" target="_blank"
             class="user-info__contact-info-item" 
             [class.darkModeText]="!isLightMode"
-
+            [class.user-info__contact-info-item--not-available]="user && (user.blog === '' || user.blog === null)"
         >
             <img [src]="isLightMode ? 'icon-website.svg' : 'icon-website-white.svg'" alt="">
-            https://github.blog
-        </a>
-        <a 
-            class="user-info__contact-info-item user-info__contact-info-item--not-available" 
-            [class.darkModeText]="!isLightMode"
-
-        >
-            <img [src]="isLightMode ? 'icon-twitter.svg' : 'icon-twitter-white.svg'" alt="">
-            Not Available
+            <p>
+                <span *ngIf="!user">https://github.blog</span>
+                <span *ngIf="user && user.blog"> {{ user.blog }} </span>
+                <span *ngIf="user && (user.blog === '' || user.blog === null)" disabled> Not Available </span>
+            </p>
         </a>
         <a 
             class="user-info__contact-info-item" 
             [class.darkModeText]="!isLightMode"
-
+            [class.user-info__contact-info-item--not-available]="user && (user.twitter_username === '' || user.twitter_username === null)"
+        >
+            <img [src]="isLightMode ? 'icon-twitter.svg' : 'icon-twitter-white.svg'" alt="">
+            <p>
+                <span *ngIf="!user" [class.user-info__contact-info-item--not-available]="!user" >Not Available</span>
+                <span *ngIf="user && user.twitter_username"> {{ user.twitter_username }} </span>
+                <span *ngIf="user && (user.twitter_username === '' || user.twitter_username === null)"> Not Available </span>
+            </p>
+        </a>
+        <a 
+            class="user-info__contact-info-item" 
+            [class.darkModeText]="!isLightMode"
+            [class.user-info__contact-info-item--not-available]="user && (user.company === '' || user.company === null)"
         >
             <img [src]="isLightMode ? 'icon-company.svg' : 'icon-company-white.svg'" alt="">
-            &#64;github
+            <p>
+                <span *ngIf="!user">&#64;github</span>
+                <span *ngIf="user && user.company"> {{ user.company }} </span>
+                <span *ngIf="user && (user.company === '' || user.company === null)"> Not Available </span>
+            </p>
         </a>
     </div>
 

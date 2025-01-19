@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, Renderer2 } from '@angular/core';
 import { ColorThemeService } from './services/color-theme.service';
 import { Subscription } from 'rxjs';
+import { IUser } from './interfaces/user.interface';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   
+  user!: IUser;
   private renderer = inject(Renderer2);
   private readonly colorThemeService = inject(ColorThemeService);
   private subscription!: Subscription;
@@ -25,5 +27,11 @@ export class AppComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  getUser(userFound: IUser) {
+    this.user = userFound;
+    console.log(userFound);
+    
   }
 }
