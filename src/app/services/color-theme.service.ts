@@ -5,7 +5,7 @@ import { BehaviorSubject } from "rxjs";
     providedIn: 'root'
 })
 export class ColorThemeService {
-    private _isLightMode = new BehaviorSubject<boolean>(true);
+    private _isLightMode = new BehaviorSubject<boolean>(false);
     isLightMode$ = this._isLightMode.asObservable();
 
     get isLightMode(): boolean {
