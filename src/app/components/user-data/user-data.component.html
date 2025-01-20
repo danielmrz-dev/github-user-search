@@ -9,9 +9,7 @@
     </div>
     
     <p class="user-info__bio" [class.darkModeText]="!isLightMode">
-        <span *ngIf="!user">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-        </span>
+        <span *ngIf="!user">This profile has no bio</span>
         <span *ngIf="user && user.bio">{{ user.bio }}</span>
         <span *ngIf="user && (user.bio === '' || user.bio === null)">This profile has no bio.</span>
     </p>
