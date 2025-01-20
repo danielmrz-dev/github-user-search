@@ -38,6 +38,11 @@
         font-weight: bold;
         padding: 0.781rem;
         border-radius: 10px;
+        cursor: pointer;
+        transition: filter .3s ease;
+        &:hover {
+            filter: brightness(150%);
+        }
     }
     &__error-msg {
         color: v.$Red;

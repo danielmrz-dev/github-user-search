@@ -11,7 +11,7 @@
         </p>
     </span>
     <a  
-        [href]="user?.blog ? user.blog : null"
+        [href]="user?.blog ? user?.blog : null"
         [style.pointer-events]="user?.blog ? 'auto' : 'none'"
         rel="noreferrer"
         target="_blank"
@@ -27,7 +27,7 @@
         </p>
     </a>
     <a  
-        [href]="user?.twitter_username ? 'https://x.com/' + user.twitter_username : null"
+        [href]="user?.twitter_username ? 'https://x.com/' + user?.twitter_username : null"
         [style.pointer-events]="user?.twitter_username ? 'auto' : 'none'"
         rel="noreferrer"
         target="_blank"

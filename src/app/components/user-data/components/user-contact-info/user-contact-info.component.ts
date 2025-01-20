@@ -12,7 +12,7 @@ export class UserContactInfoComponent implements OnInit {
   isLightMode!: boolean;
   private readonly colorThemeService = inject(ColorThemeService)
 
-  @Input({ required: true }) user!: IUser;
+  @Input({ required: true }) user!: IUser | null;
 
   ngOnInit(): void {
     this.colorThemeService.isLightMode$.subscribe((value) => {
