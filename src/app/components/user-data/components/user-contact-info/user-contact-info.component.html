@@ -1,0 +1,57 @@
+<div class="contact-info">
+    <span 
+        class="contact-info-item" 
+        [class.darkModeText]="!isLightMode"
+        [class.contact-info-item--not-available]="user && (user.location === '' || user.location === null)">
+        <img [src]="isLightMode ? 'icon-location.svg' : 'icon-location-white.svg'" alt="">
+        <p>
+            <span *ngIf="!user">San Francisco</span>
+            <span *ngIf="user && user.location"> {{ user.location }} </span>
+            <span *ngIf="user && (user.location === '' || user.location === null) "> Not Available </span>
+        </p>
+    </span>
+    <a  
+        [href]="user?.blog ? user.blog : null"
+        [style.pointer-events]="user?.blog ? 'auto' : 'none'"
+        rel="noreferrer"
+        target="_blank"
+        class="contact-info-item" 
+        [class.darkModeText]="!isLightMode"
+        [class.contact-info-item--not-available]="user && (user.blog === '' || user.blog === null)"
+    >
+        <img [src]="isLightMode ? 'icon-website.svg' : 'icon-website-white.svg'" alt="">
+        <p>
+            <span *ngIf="!user">https://github.blog</span>
+            <span *ngIf="user && user.blog"> {{ user.blog }} </span>
+            <span *ngIf="user && (user.blog === '' || user.blog === null)"> Not Available </span>
+        </p>
+    </a>
+    <a  
+        [href]="user?.twitter_username ? 'https://x.com/' + user.twitter_username : null"
+        [style.pointer-events]="user?.twitter_username ? 'auto' : 'none'"
+        rel="noreferrer"
+        target="_blank"
+        class="contact-info-item" 
+        [class.darkModeText]="!isLightMode"
+        [class.contact-info-item--not-available]="(user && (user.twitter_username === '' || user.twitter_username === null)) || !user"
+    >
+        <img [src]="isLightMode ? 'icon-twitter.svg' : 'icon-twitter-white.svg'" alt="">
+        <p>
+            <span *ngIf="!user">Not Available</span>
+            <span *ngIf="user && user.twitter_username"> {{ user.twitter_username }} </span>
+            <span *ngIf="user && (user.twitter_username === '' || user.twitter_username === null)"> Not Available </span>
+        </p>
+    </a>
+    <span 
+        class="contact-info-item" 
+        [class.darkModeText]="!isLightMode"
+        [class.contact-info-item--not-available]="user && (user.company === '' || user.company === null)"
+    >
+        <img [src]="isLightMode ? 'icon-company.svg' : 'icon-company-white.svg'" alt="">
+        <p>
+            <span *ngIf="!user">&#64;github</span>
+            <span *ngIf="user && user.company"> {{ user.company }} </span>
+            <span *ngIf="user && (user.company === '' || user.company === null)"> Not Available </span>
+        </p>
+    </span>
+</div>

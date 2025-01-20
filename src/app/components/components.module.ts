@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserContactInfoComponent } from './user-data/components/user-contact-info/user-contact-info.component';
 
 
 
@@ -11,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     HeaderComponent,
     SearchBarComponent,
-    UserDataComponent
+    UserDataComponent,
+    UserContactInfoComponent
   ],
   imports: [
     CommonModule,
