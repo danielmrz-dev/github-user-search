@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click here](https://your-solution-url.com)
+- Solution URL: [Click here](https://www.frontendmentor.io/solutions/github-user-search-app-built-with-angular-typescript-and-sass-mCA7VfC9J_)
 - Live Site URL: [Click here](https://github-user-search-pearl-six.vercel.app/)
 
 ## My process
